@@ -28,10 +28,17 @@ require_once PAPIRUS_PATH_LIBRARY . "Papirus.php";
 $papirus = new Papirus();
 
 // Start Engine
-$papirus -> init();
-
-// Set Papirus Configuration File Directories
-$papirus -> config -> attachDirectory(PAPIRUS_PATH_CONFIG);
+$papirus -> init(
+	array(
+		'ROOT_PATH' => PAPIRUS_PATH_ROOT,
+		'LIBRARY_PATH' => PAPIRUS_PATH_LIBRARY,
+		'MODULE_PATH' => PAPIRUS_PATH_MODULE,
+		'CONFIG_PATH' => PAPIRUS_PATH_CONFIG,
+		'TEMPLATE_PATH' => PAPIRUS_PATH_TEMPLATE,
+		'UPLOAD_PATH' => PAPIRUS_PATH_UPLOAD,
+		'CACHE_PATH' => PAPIRUS_PATH_CACHE
+	)
+);
 
 // Get Papirus Configuration
 $papirus_config = $papirus -> config -> get("papirus");

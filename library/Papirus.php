@@ -21,6 +21,12 @@ class Papirus {
 	public $config;
 	
 	/**
+	 * Papirus Database Object
+	 * @var		object
+	 */
+	public $db;
+	
+	/**
 	 * Papirus Auto-Load Method
 	 * 
 	 * @param	string		$class_name
@@ -38,10 +44,29 @@ class Papirus {
 		}
 	}
 	
-	public function init() {
+	/**
+	 * Initialize Papirus
+	 * 
+	 * @param	array 		$settings
+	 * @return	null
+	 */
+	public function init(array $settings = NULL) {
 		// Load Configuration Class
 		if (!$this -> config instanceof Papirus_Config) {
 			$this -> config = new Papirus_Config;
+			
+			if (isset($settings['CONFIG_PATH'])) { // Set Configuration Directory
+				$this -> config -> attachDirectory($settings['CONFIG_PATH']);
+			}
+		}
+		
+		// Load DB Class
+		if (!$this -> db instanceof Papirus_DB) {
+			$this -> db = new Papirus_DB;
+			
+			if(($papirus_config_db = $this -> config -> get("papirus_db"))) {
+				$this -> db -> init($papirus_config_db);
+			}
 		}
 	}
 }

@@ -6,12 +6,13 @@
 
 return array(
 	'default' => array(
-		'type' => 'PDO', 
+		'driver' => 'PDO', 
 		'connection' => array(
+			'type' => "mysql",
 			'hostname' => 'localhost', 
-			'database' => '', 
-			'username' => '', 
-			'password' => ''
+			'database' => 'papirus_test', 
+			'username' => 'root', 
+			'password' => '123456'
 		), 
 		'table_prefix' => '', 
 		'charset' => 'utf8'
