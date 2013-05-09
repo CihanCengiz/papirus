@@ -18,7 +18,7 @@ define('PAPIRUS_PATH_LIBRARY', dirname(__FILE__) . "/");
 define('PAPIRUS_PATH_MODULE', dirname(__FILE__) . "/../module/");
 define('PAPIRUS_PATH_CONFIG', dirname(__FILE__) . "/../config/");
 define('PAPIRUS_PATH_TEMPLATE', dirname(__FILE__) . "/../template/");
-define('PAPIRUS_PATH_UPLOAD', dirname(__FILE__) . "/../uplaod/");
+define('PAPIRUS_PATH_UPLOAD', dirname(__FILE__) . "/../uploads/");
 define('PAPIRUS_PATH_CACHE', dirname(__FILE__) . "/../cache/");
 
 // Load Papirus Class File
